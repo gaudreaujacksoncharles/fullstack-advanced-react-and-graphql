@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     --grey: #3A3A3A;
     --gray: var(--grey);
     --lightGrey: #e1e1e1;
-    --lightGray: var(---lightGrey);
+    --lightGray: var(--lightGrey);
     --offWhite: #ededed;
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
@@ -34,13 +34,17 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: var(---black);
+    color: var(--black);
   }
   a:hover {
     text-decoration: underline;
   }
   button {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top:0;
+    margin-bottom:0;
   }
 `
 
@@ -50,7 +54,7 @@ const InnerStyles = styled.div`
   padding: 2rem;
 `
 
-export default function Page({ children, cool }) {
+export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
@@ -61,6 +65,5 @@ export default function Page({ children, cool }) {
 }
 
 Page.propTypes = {
-  cool: PropTypes.string,
   children: PropTypes.any,
 }
