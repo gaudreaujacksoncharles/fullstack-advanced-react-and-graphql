@@ -3,6 +3,7 @@ import Form from "../components/styles/Form"
 import DisplayError from "../components/ErrorMessage"
 import gql  from "graphql-tag";
 import { useMutation } from "@apollo/client";
+import Router from "next/router";
 import { ALL_PRODUCTS_QUERY } from "./Products";
 
 const CREATE_PRODUCT_MUTATION = gql`
@@ -48,8 +49,11 @@ export default function CreateProduct() {
     <Form onSubmit={async (e) => {
       e.preventDefault()
       console.log(inputs)
-      await createProduct()
+      const res = await createProduct()
       clearForm()
+      Router.push({
+        pathname: `/product/${res.data.createProduct.id}`
+      })
     }}>
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
