@@ -24,7 +24,6 @@ const CREATE_PRODUCT_MUTATION = gql`
           altText: $name
         }
       }
-      
     }) {
       id
       price
