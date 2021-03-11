@@ -57,7 +57,7 @@ export default function CreateProduct() {
     }}>
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
-      <label htmlFor="name">
+        <label htmlFor="name">
           Image
           <input
             required
@@ -90,7 +90,7 @@ export default function CreateProduct() {
             />
           </label>
           <label htmlFor="price">
-            Price
+            Description
             <textarea
               id="description"
               name="description"
