@@ -4,7 +4,6 @@ import Link from 'next/link'
 import PriceTag from './styles/PriceTag'
 import formatMoney from '../lib/formatMoney'
 
-
 export default function Product({ product }) {
     return (
         <ItemStyles>
