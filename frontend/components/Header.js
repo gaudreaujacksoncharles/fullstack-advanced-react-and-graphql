@@ -38,7 +38,6 @@ const  Bar = styled.div`
 const SubBar = styled.div`
   padding-left:24px;
   padding-right:24px;
-  border-bottom: 2px solid var(--black, black);
 `
 
 export default function Header() {
