@@ -37,7 +37,6 @@ const SearchStyles = styled.div`
   input {
     width: 100%;
     padding: 10px;
-    border: 0;
     font-size: 2rem;
     &.loading {
       animation: ${glow} 0.5s ease-in-out infinite alternate;
@@ -45,4 +44,14 @@ const SearchStyles = styled.div`
   }
 `;
 
-export { DropDown, DropDownItem, SearchStyles };
+const SearchInput = styled.input`
+  display:flex;
+  border:1px solid var(--lightGray);
+  border-radius:3px;
+  box-shadow:0 1px 1px 0 rgba(0,0,0,.15);
+  &:focus {
+    outline-color:red;
+  }
+`
+
+export { DropDown, DropDownItem, SearchStyles, SearchInput }
