@@ -35,9 +35,9 @@ export default function SignIn() {
   })
   async function handleSubmit(e) {
     e.preventDefault() // stop the form from submitting
-    console.log(inputs)
+    console.log('inputs:', inputs)
     const res = await signin()
-    console.log(res)
+    console.log('response:', res)
     resetForm()
     // Send the email and password to the graphqlAPI
   }
@@ -56,7 +56,7 @@ export default function SignIn() {
           <input
             type="email"
             name="email"
-            placeholder="Your Email Address"
+            placeholder="Email Address"
             autoComplete="email"
             value={inputs.email}
             onChange={handleChange}
@@ -73,7 +73,7 @@ export default function SignIn() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Sign In!</button>
+        <button type="submit">Sign In</button>
       </fieldset>
     </Form>
   )
