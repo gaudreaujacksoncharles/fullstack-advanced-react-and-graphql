@@ -18,9 +18,9 @@ function makeANiceEmail(text: string) {
       line-height: 2;
       font-size: 20px;
     ">
-      <h2>Hello There!</h2>
+      <h2>Sick Fits</h2>
       <p>${text}</p>
-      <p>😘, Wes Bos</p>
+      <p>Charles Gaudreau Jackson</p>
     </div>
   `;
 }
@@ -48,9 +48,9 @@ export async function sendPasswordResetEmail(
     // email the user a token
     const info = (await transport.sendMail({
         to,
-        from: 'wes@wesbos.com',
+        from: 'charles@cursuum.com',
         subject: 'Your password reset token!',
-        html: makeANiceEmail(`Your Password Reset Token is here!
+        html: makeANiceEmail(`Your password reset token is here!
       <a href="${process.env.FRONTEND_URL}/reset?token=${resetToken}">Click Here to reset</a>
     `),
     })) as MailResponse;
