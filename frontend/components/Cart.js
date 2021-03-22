@@ -5,6 +5,7 @@ import formatMoney from '../lib/formatMoney'
 import { useUser } from './User'
 import { cacheSlot } from '@apollo/client/cache'
 import calcTotalToPrice from '../lib/calcTotalToPrice'
+import { useCart } from '../lib/cartState'
 
 
 const CartItemStyles = styled.li`
@@ -33,14 +34,15 @@ function CartItem({ cartItem }) {
 
 export default function Cart(){
     const me = useUser()
+    const { cartOpen, closeCart } = useCart()
     if (!me) return null
-    console.log(me);
     return (
-        <CartStyles open>
+        <CartStyles open={cartOpen}>
             <header>
                 <Supreme>
                     {me.name}'s Cart
                 </Supreme>
+                <button onClick={closeCart}>&times;</button>
             </header>
             <ul>
                 {me.cart.map(cartItem => (

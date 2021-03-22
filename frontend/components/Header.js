@@ -49,7 +49,7 @@ export default function Header() {
         <Logo>
           <Link href="/">Sick fits</Link>
         </Logo>
-        <Nav />
+        <Nav/>
       </Bar>
       <SubBar>
         <Search/>
