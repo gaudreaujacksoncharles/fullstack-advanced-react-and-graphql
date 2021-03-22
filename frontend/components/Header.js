@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Nav from './Nav';
 import Search from './Search'
+import Cart from './Cart'
 
 const HeaderStyles = styled.header`
   display:flex;
@@ -53,6 +54,7 @@ export default function Header() {
       <SubBar>
         <Search/>
       </SubBar>
+      <Cart/>
     </HeaderStyles>
   )
 }
