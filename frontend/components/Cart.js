@@ -6,6 +6,7 @@ import { useUser } from './User'
 import { cacheSlot } from '@apollo/client/cache'
 import calcTotalToPrice from '../lib/calcTotalToPrice'
 import { useCart } from '../lib/cartState'
+import RemoveFromCart from './RemoveFromCart'
 
 
 const CartItemStyles = styled.li`
@@ -28,6 +29,7 @@ function CartItem({ cartItem }) {
                     &nbsp;each
                 </em>
             </div>
+            <RemoveFromCart id={cartItem.id} />
         </CartItemStyles>
     )
 }
