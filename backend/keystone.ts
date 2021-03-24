@@ -11,6 +11,7 @@ import { CartItem } from './schemas/CartItem';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { extendGraphqlSchema } from './mutations/index'
 
 function check(name: string) { }
 
@@ -64,6 +65,7 @@ export default withAuth(
             ProductImage,
             CartItem,
         }),
+        extendGraphqlSchema,
         ui: {
             // Show the UI only for poeple who pass this test
             isAccessAllowed: ({ session }) =>
