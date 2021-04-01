@@ -7,7 +7,6 @@ export const SideNavigationStyles = styled.aside`
     top:0; left:0;
     width:var(--sideNavigationWidth);
     height:100%;
-    //background-color:orange;
     padding-top:calc(var(--topNavigationHeight) + var(--sideNavigationGutterY));
 `
 export const Feature = styled.div`

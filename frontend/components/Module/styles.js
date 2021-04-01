@@ -7,8 +7,9 @@ export const ModuleStyles = styled.div`
     flex:1;
     position:relative;
     padding-top:var(--sideNavigationGutterY);
+    padding-bottom:var(--sideNavigationGutterY);
     padding-left:var(--modulePaddingX);
-    padding-right:var(--modulePaddingX);
+    padding-right:var(--topNavigationPaddingX);
     overflow-y:auto;
 `
 export const ModuleTitle = styled.h1`
