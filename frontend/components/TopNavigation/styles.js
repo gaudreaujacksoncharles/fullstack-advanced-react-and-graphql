@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darken } from 'polished'
 
 export const TopNavigationStyles = styled.nav`
   display:flex;
@@ -9,7 +10,7 @@ export const TopNavigationStyles = styled.nav`
   top:0; left:0;
   width:100%;
   height:var(--topNavigationHeight);
-  background-color:blue;
+  //background-color:${darken(.05, '#FFFFFF')};
   padding-left:var(--topNavigationPaddingX);
   padding-right:var(--topNavigationPaddingX);
   z-index:2;

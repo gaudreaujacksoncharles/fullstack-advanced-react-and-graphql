@@ -7,14 +7,14 @@ export const SideNavigationStyles = styled.aside`
     top:0; left:0;
     width:var(--sideNavigationWidth);
     height:100%;
-    background-color:orange;
+    //background-color:orange;
     padding-top:calc(var(--topNavigationHeight) + var(--sideNavigationGutterY));
-    padding-left:var(--topNavigationPaddingX);
-    padding-right:var(--topNavigationPaddingX);
 `
 export const Feature = styled.div`
     display:flex;
-    margin-top:1.6rem;
+    padding-left:var(--topNavigationPaddingX);
+    padding-right:var(--topNavigationPaddingX);
+    margin-top:2.4rem;
     &:first-of-type {
       margin-top:0;  
     }
@@ -34,6 +34,7 @@ export const FeatureButton = styled.button`
     color:black;
     font-size:1.6rem;
     line-height:1.6rem;
+    font-weight:500;
     padding:0;
     -webkit-appearance:none;
     appearance:none;
@@ -46,4 +47,11 @@ export const FeatureButton = styled.button`
     &:focus {
         outline:none;
     }
+`
+export const Options = styled.div`
+    display:flex;
+    width:100%;
+    height:40px;
+    background-color:teal;
+    margin-top:auto;
 `

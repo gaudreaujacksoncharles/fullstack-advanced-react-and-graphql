@@ -3,7 +3,7 @@ import CartCount from '../CartCount'
 import { useCart } from '../../lib/cartState';
 import SignOut from '../SignOut/';
 import { useUser } from '../User'
-import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton} from './styles';
+import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton, Options} from './styles';
 
 export default function SideNavigation() {
   const user = useUser()
@@ -36,7 +36,7 @@ export default function SideNavigation() {
             <Feature>
               <FeatureHeader>
                   <FeatureButton type='button' onClick={openCart}>
-                    My Cart
+                    Cart
                   </FeatureButton>
                   <CartCount count={user.cart.reduce(
                     (tally, cartItem) => tally + cartItem.quantity, 0
@@ -60,6 +60,9 @@ export default function SideNavigation() {
           </>
         )
       }
+      <Options>
+
+      </Options>
     </SideNavigationStyles>
   )
 }

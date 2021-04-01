@@ -2,16 +2,20 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import styled from 'styled-components'
 
 const Dot = styled.div`
+    display:flex;
     background: var(--red);
     color:white;
     border-radius:100px;
-    margin-left:.8rem;
     font-size:1.2rem;
     line-height:1.2rem;
-    padding:4px;
     // this makes all the numbers the same width
     font-feature-settings: 'tnum';
     font-variant-numeric: tabular-nums;
+    padding:4px;
+    margin-left:.8rem;
+    &:empty {
+        display:none;
+    }
 `
 
 const AnimationStyles = styled.span`
