@@ -6,7 +6,7 @@ export const SearchStyles = styled.div`
 `
 export const SearchInput = styled.input`
     display:flex;
-    width:44rem;
+    width:48rem;
     height:4rem;
     background-color:${darken(.05, '#FFFFFF')};
     font-size:1.6rem;
