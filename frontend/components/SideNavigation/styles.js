@@ -25,6 +25,7 @@ export const FeatureHeader = styled.div`
         color:black;
         font-size:1.6rem;
         line-height:1.6rem;
+        font-weight:500;
         padding:0;
     }
 `
