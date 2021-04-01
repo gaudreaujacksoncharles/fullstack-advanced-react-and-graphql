@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   *, *:before, *:after {
-    box-sizing: border-box;
+    box-sizing: inherit;
   }
   body {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -57,6 +57,10 @@ const GlobalStyles = createGlobalStyle`
     margin-top:0;
     margin-bottom:0;
   }
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 `
 
 const InnerStyles = styled.div`
@@ -65,7 +69,6 @@ const InnerStyles = styled.div`
   align-items:flex-start;
   flex:1;
   background-color:green;
-  padding:24px;
 `
 
 export default function Page({ children }) {

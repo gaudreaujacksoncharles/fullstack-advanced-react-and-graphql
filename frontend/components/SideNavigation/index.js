@@ -3,7 +3,7 @@ import CartCount from '../CartCount'
 import { useCart } from '../../lib/cartState';
 import SignOut from '../SignOut/';
 import { useUser } from '../User'
-import { SideNavigationStyles, Feature, FeatureHeader} from './styles';
+import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton} from './styles';
 
 export default function SideNavigation() {
   const user = useUser()
@@ -33,20 +33,30 @@ export default function SideNavigation() {
                   <Link href="/account">Account</Link>
               </FeatureHeader>
             </Feature>
-            <SignOut/>
-            <button type='button' onClick={openCart}>
-              My Cart
-              <CartCount count={user.cart.reduce(
-                (tally, cartItem) => tally + cartItem.quantity, 0
-              )} />
-            </button>
+            <Feature>
+              <FeatureHeader>
+                  <FeatureButton type='button' onClick={openCart}>
+                    My Cart
+                  </FeatureButton>
+                  <CartCount count={user.cart.reduce(
+                    (tally, cartItem) => tally + cartItem.quantity, 0
+                  )} />
+              </FeatureHeader>
+            </Feature>
+            <Feature>
+              <SignOut/>
+            </Feature>
           </>
         )
       }
       {
         !user && (
           <>
-            <Link href="/signin">Sign In</Link>
+            <Feature>
+              <FeatureHeader>
+                <Link href="/signin">Sign In</Link>
+              </FeatureHeader>
+            </Feature>
           </>
         )
       }

@@ -4,9 +4,11 @@ import styled from 'styled-components'
 const Dot = styled.div`
     background: var(--red);
     color:white;
-    padding:0.5rem;
     border-radius:100px;
-    margin-left:1rem;
+    margin-left:.8rem;
+    font-size:1.2rem;
+    line-height:1.2rem;
+    padding:4px;
     // this makes all the numbers the same width
     font-feature-settings: 'tnum';
     font-variant-numeric: tabular-nums;

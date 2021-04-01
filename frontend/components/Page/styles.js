@@ -6,5 +6,5 @@ export const PageStyles = styled.div`
     height:100vh;
     position:relative;
     padding-top:var(--topNavigationHeight);
-    padding-left:var(--sideNavigationWidth);
+    padding-left:calc(var(--sideNavigationWidth) + calc(var(--topNavigationPaddingX) * 2));
 `
