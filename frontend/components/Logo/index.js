@@ -3,7 +3,7 @@ import { LogoStyles } from './styles'
 
 export default function Logo() {
     return (
-        <LogoStyles>
+        <LogoStyles mr='1.6rem'>
             <Link href="/">Sick fits</Link>
         </LogoStyles>
     )

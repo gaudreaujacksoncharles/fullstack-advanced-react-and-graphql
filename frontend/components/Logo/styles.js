@@ -9,6 +9,7 @@ export const LogoStyles = styled.h1`
   font-size: 1.8rem;
   border-radius:2px;
   z-index: 2;
+  ${props => props.mr && `margin-right:${props.mr}`};
   a {
     display:flex;
     color: white;

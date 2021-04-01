@@ -15,3 +15,6 @@ export const TopNavigationStyles = styled.nav`
   padding-right:var(--topNavigationPaddingX);
   z-index:2;
 `
+export const Side = styled.nav`
+  display:flex;
+`

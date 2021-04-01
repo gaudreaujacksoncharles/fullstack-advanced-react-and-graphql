@@ -1,11 +1,15 @@
 import Search from '../Search/'
-import { TopNavigationStyles } from './styles'
+import { TopNavigationStyles, Side } from './styles'
 import Logo from '../Logo'
+import CurrentUser from '../CurrentUser'
 
 export default function TopNavigation() {
   return (
     <TopNavigationStyles>
-      <Logo/>
+      <Side>
+        <Logo/>
+        <CurrentUser/>
+      </Side>
       <Search/>
     </TopNavigationStyles>
   )
