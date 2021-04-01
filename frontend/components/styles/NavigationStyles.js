@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import styled from 'styled-components';
 
-const NavStyles = styled.ul`
+const NavigationStyles = styled.ul`
   display:flex;
   align-self:center;
   align-items:flex-end;
@@ -26,4 +25,4 @@ const NavStyles = styled.ul`
   }
 `;
 
-export default NavStyles;
+export default NavigationStyles

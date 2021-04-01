@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client"
 import gql from "graphql-tag"
-import { CURRENT_USER_QUERY } from "./User"
+import { CURRENT_USER_QUERY } from "../User"
+import { SignOutStyles } from "./styles"
 
 const SIGNOUT_MUTATION = gql`
     mutation {
@@ -13,11 +14,11 @@ export default function SignOut() {
         refetchQueries: [{ query: CURRENT_USER_QUERY }]
     })
     return (
-        <button
+        <SignOutStyles
             type='button'
             onClick={signout}
         >
             Sign Out
-        </button>
+        </SignOutStyles>
     )
 }

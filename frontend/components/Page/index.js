@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
-import SingleProduct from './SingleProduct'
-import Header from './Header';
+import Cart from '../Cart';
+import SideNavigation from '../SideNavigation';
+import TopNavigation from '../TopNavigation';
+import { PageStyles } from './styles';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -20,11 +22,17 @@ const GlobalStyles = createGlobalStyle`
     --offWhite: #ededed;
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
+    /* SideNavigation */
+    --sideNavigationWidth:200px;
+    --sideNavigationGutterY: 24px;
+    /* TopNavigation */
+    --topNavigationHeight:56px;
+    --topNavigationPaddingX:12px;
     font-size:10px;
     box-sizing: border-box;
   }
   *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
   body {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -43,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
     fong-weight:700;
+    padding:0;
   }
   h1, h2, h3, h4, h5, h6 {
     margin-top:0;
@@ -51,18 +60,23 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const InnerStyles = styled.div`
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding: 2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  flex:1;
+  background-color:green;
+  padding:24px;
 `
 
 export default function Page({ children }) {
   return (
-    <div>
+    <PageStyles>
       <GlobalStyles />
-      <Header />
+      <TopNavigation />
+      <SideNavigation/>
       <InnerStyles>{children}</InnerStyles>
-    </div>
+      <Cart/>
+    </PageStyles>
   )
 }
 

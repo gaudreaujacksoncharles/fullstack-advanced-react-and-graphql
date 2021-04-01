@@ -34,24 +34,19 @@ const glow = keyframes`
 
 const SearchStyles = styled.div`
   position: relative;
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 2rem;
-    &.loading {
-      animation: ${glow} 0.5s ease-in-out infinite alternate;
-    }
-  }
 `;
 
 const SearchInput = styled.input`
-  display:none;
+  display:flex;
   border:1px solid var(--lightGray);
   border-radius:3px;
   box-shadow:0 1px 1px 0 rgba(0,0,0,.15);
   &:focus {
     outline-color:red;
   }
+  &.loading {
+      animation: ${glow} 0.5s ease-in-out infinite alternate;
+    }
 `
 
 export { DropDown, DropDownItem, SearchStyles, SearchInput }
