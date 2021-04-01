@@ -19,12 +19,14 @@ export const GlobalStyles = createGlobalStyle`
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     font-size:10px;
     box-sizing: border-box;
-    /* SideNavigation */
-    --sideNavigationWidth:19rem;
-    --sideNavigationGutterY:2.4rem;
     /* TopNavigation */
     --topNavigationHeight:5.6rem;
     --topNavigationPaddingX:1.2rem;
+    /* Current User */
+    --currentUserFontWeight:500;
+    /* SideNavigation */
+    --sideNavigationWidth:19rem;
+    --sideNavigationGutterY:2.4rem;
     /* Module */
     --modulePaddingX:1.6rem;
   }

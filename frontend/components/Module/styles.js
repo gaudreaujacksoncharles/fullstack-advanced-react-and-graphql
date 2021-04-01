@@ -16,5 +16,5 @@ export const ModuleTitle = styled.h1`
     display:flex;
     font-size:1.6rem;
     line-height:1.6rem;
-    font-weight:600;
+    font-weight:var(--currentUserFontWeight);
 `

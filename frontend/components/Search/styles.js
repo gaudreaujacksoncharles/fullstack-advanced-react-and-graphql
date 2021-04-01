@@ -11,7 +11,7 @@ export const SearchInput = styled.input`
     background-color:${darken(.05, '#FFFFFF')};
     font-size:1.6rem;
     line-height:1.6rem;
-    font-weight:500;
+    font-weight:var(--currentUserFontWeight);
     padding:12px 16px;
     border-radius:3px;
     border:none;
@@ -19,5 +19,8 @@ export const SearchInput = styled.input`
     appearance: none;
     &:focus {
         outline:none;
+    }
+    &::placeholder {
+        font-weight:var(--currentUserFontWeight);
     }
 `
