@@ -43,9 +43,6 @@ export default function SideNavigation() {
                   )} />
               </FeatureHeader>
             </Feature>
-            <Feature>
-              <SignOut/>
-            </Feature>
           </>
         )
       }
@@ -61,7 +58,9 @@ export default function SideNavigation() {
         )
       }
       <Options>
-
+        <Feature>
+          <SignOut/>
+        </Feature>
       </Options>
     </SideNavigationStyles>
   )
