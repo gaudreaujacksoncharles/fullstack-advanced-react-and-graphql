@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import Cart from '../Cart';
 import SideNavigation from '../SideNavigation';
 import TopNavigation from '../TopNavigation';
+import Module from '../Module';
 import { PageStyles } from './styles';
 
 const GlobalStyles = createGlobalStyle`
@@ -22,14 +23,16 @@ const GlobalStyles = createGlobalStyle`
     --offWhite: #ededed;
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
-    /* SideNavigation */
-    --sideNavigationWidth:190px;
-    --sideNavigationGutterY: 24px;
-    /* TopNavigation */
-    --topNavigationHeight:56px;
-    --topNavigationPaddingX:12px;
     font-size:10px;
     box-sizing: border-box;
+    /* SideNavigation */
+    --sideNavigationWidth:19rem;
+    --sideNavigationGutterY:2.4rem;
+    /* TopNavigation */
+    --topNavigationHeight:5.6rem;
+    --topNavigationPaddingX:1.2rem;
+    /* Module */
+    --modulePaddingX:1.6rem;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -63,21 +66,13 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const InnerStyles = styled.div`
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  flex:1;
-  background-color:green;
-`
-
 export default function Page({ children }) {
   return (
     <PageStyles>
       <GlobalStyles />
       <TopNavigation />
       <SideNavigation/>
-      <InnerStyles>{children}</InnerStyles>
+      <Module>{children}</Module>
       <Cart/>
     </PageStyles>
   )

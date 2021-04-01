@@ -1,9 +1,11 @@
+import { ModuleTitle } from '../components/Module/styles'
+
 export default function OrdersPage() {
     return (
         <>
-            <p>
-                Orders!
-            </p>
+            <ModuleTitle>
+                Orders
+            </ModuleTitle>
         </>
     )
 }
