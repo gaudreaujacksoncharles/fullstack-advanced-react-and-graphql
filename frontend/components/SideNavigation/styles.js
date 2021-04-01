@@ -5,7 +5,7 @@ export const SideNavigationStyles = styled.aside`
     flex-direction:column;
     position:absolute;
     top:0; left:0;
-    width:230px;
+    width:var(--sideNavigationWidth);
     height:100%;
     background-color:orange;
     padding-top:calc(var(--topNavigationHeight) + var(--sideNavigationGutterY));

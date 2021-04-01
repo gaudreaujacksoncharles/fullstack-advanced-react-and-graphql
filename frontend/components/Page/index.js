@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     /* SideNavigation */
-    --sideNavigationWidth:200px;
+    --sideNavigationWidth:190px;
     --sideNavigationGutterY: 24px;
     /* TopNavigation */
     --topNavigationHeight:56px;
