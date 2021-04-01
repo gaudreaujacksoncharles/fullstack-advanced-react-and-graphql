@@ -43,9 +43,9 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: var(--black);
-  }
-  a:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   button {
     padding:0;
