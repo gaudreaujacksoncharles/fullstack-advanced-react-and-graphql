@@ -7,7 +7,7 @@ export default function TopNavigation() {
   return (
     <TopNavigationStyles>
       <Side>
-        <Logo/>
+      <Logo mr={'1.6rem'}/>
         <CurrentUser/>
       </Side>
       <Search/>

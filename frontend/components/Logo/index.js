@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { LogoStyles } from './styles'
 
-export default function Logo() {
+export default function Logo({mr}) {
     return (
-        <LogoStyles mr='1.6rem'>
+        <LogoStyles mr={mr}>
             <Link href="/">Sick fits</Link>
         </LogoStyles>
     )

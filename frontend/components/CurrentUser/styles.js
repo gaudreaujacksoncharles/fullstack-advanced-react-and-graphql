@@ -12,7 +12,7 @@ export const CurrentUserImage = styled.div`
     height:3.2rem;
     background-color:${darken(.1, '#FFFFFF')};
     border-radius:.3rem;
-    margin-right:1.6rem;
+    margin-right:1.2rem;
 `
 export const CurrentUserName = styled.div`
     display:flex;

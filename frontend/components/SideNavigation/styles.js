@@ -52,6 +52,5 @@ export const Options = styled.div`
     display:flex;
     width:100%;
     height:40px;
-    background-color:teal;
     margin-top:auto;
 `
