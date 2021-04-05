@@ -33,13 +33,31 @@ export const DropDown = styled.div`
     flex-direction:column;
     position:absolute;
     top:48px;
+    width:100%;
+    background-color:white;
+    padding-top:8px;
+    padding-bottom:8px;
+    z-index:4;
+    border-radius:4px;
+    box-shadow:var(--bs);
+    &:empty {
+        display:none;
+    }
 `
 export const DropDownItem = styled.div`
     display:flex;
+    align-items:center;
+    width:100%;
+    padding:8px;
+    &:hover {
+        background:rgba(0,0,0,.024);
+        cursor:pointer;
+    }
 `
 export const ItemImage = styled.img`
     display:flex;
     width:50px;
+    margin-right:8px;
 `
 export const ItemName = styled.div`
     display:flex;

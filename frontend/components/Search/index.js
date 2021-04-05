@@ -3,6 +3,7 @@ import { resetIdCounter, useCombobox } from 'downshift';
 import gql from 'graphql-tag';
 import debounce from 'lodash.debounce';
 import { useRouter } from 'next/dist/client/router';
+import { useState } from 'react';
 import { SearchStyles, SearchInputWrapper, SearchInput, DropDown, DropDownItem, ItemImage, ItemName  } from './styles'
 
 const SEARCH_PRODUCTS_QUERY = gql`
@@ -28,6 +29,7 @@ const SEARCH_PRODUCTS_QUERY = gql`
 
 export default function Search() {
   const router = useRouter();
+  const [dropDownVisibility, setDropDownVisibility] = useState(false)
   const [findItems, { loading, data, error }] = useLazyQuery(
     SEARCH_PRODUCTS_QUERY,
     {
@@ -37,6 +39,13 @@ export default function Search() {
   const items = data?.searchTerms || [];
   const findItemsButChill = debounce(findItems, 1);
   resetIdCounter();
+  function handleClick(id) {
+    console.log(id)
+    router.push({
+        pathname: `/product/${id}`
+    })
+    setDropDownVisibility(false)
+}
   const {
     isOpen,
     inputValue,
@@ -48,6 +57,7 @@ export default function Search() {
   } = useCombobox({
     items,
     onInputValueChange() {
+        setDropDownVisibility(true)
       findItemsButChill({
         variables: {
           searchTerm: inputValue,
@@ -58,6 +68,7 @@ export default function Search() {
       router.push({
         pathname: `/product/${selectedItem.id}`,
       });
+      setDropDownVisibility(false)
     },
     itemToString: (item) => item?.name || '',
   });
@@ -74,14 +85,15 @@ export default function Search() {
         />
       </SearchInputWrapper>
         {
-            inputValue ? (
+            inputValue && dropDownVisibility === true ? (
                 <DropDown {...getMenuProps()}>
                     {isOpen &&
                     items.map((item, index) => (
                         <DropDownItem
-                        {...getItemProps({ item })}
-                        key={item.id}
-                        highlighted={index === highlightedIndex}
+                            {...getItemProps({ item })}
+                            key={item.id}
+                            highlighted={index === highlightedIndex}
+                            onClick={() => handleClick(item.id)}
                         >
                         <ItemImage src={item.photo.image.publicUrlTransformed} alt={item.name} width="50"/>
                         <ItemName>{item.name}</ItemName>
