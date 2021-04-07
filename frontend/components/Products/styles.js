@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const ProductsListStyles = styled.div`
+export const ProductsStyles = styled.div`
     display:flex;
 `
