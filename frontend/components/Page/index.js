@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Cart from '../Cart';
+import Cart from '../Cart/';
 import SideNavigation from '../SideNavigation';
 import TopNavigation from '../TopNavigation';
 import Module from '../Module';
