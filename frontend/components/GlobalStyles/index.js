@@ -29,6 +29,10 @@ export const GlobalStyles = createGlobalStyle`
     --sideNavigationGutterY:2.4rem;
     /* Module */
     --modulePaddingX:1.6rem;
+    /* Cart */
+    --cartBoxShadow:0 12px 24px 0 rgba(0,0,0,0.17);
+    /* Cart Item */
+    --cartItemPaddingX: 1.2rem;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -59,6 +63,16 @@ export const GlobalStyles = createGlobalStyle`
     margin-block-end: 0;
   }
   
+  ul {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+  }
+
   input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
   input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
   input[type="search"]::-webkit-search-decoration,

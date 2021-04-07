@@ -1,4 +1,4 @@
-import CartStyles from './styles'
+import { CartStyles, Footer, Header, List, Title, CloseButton } from './styles'
 import formatMoney from '../../lib/formatMoney'
 import { useUser } from '../User'
 import { cacheSlot } from '@apollo/client/cache'
@@ -12,23 +12,23 @@ export default function Cart(){
     if (!me) return null
     return (
         <CartStyles open={cartOpen}>
-            <header>
-                <h1>
-                    {me.name}'s Cart
-                </h1>
-                <button onClick={closeCart}>&times;</button>
-            </header>
-            <ul>
+            <Header>
+                <Title>
+                    Cart
+                </Title>
+                <CloseButton onClick={closeCart}>&times;</CloseButton>
+            </Header>
+            <List>
                 {me.cart.map(cartItem => (
                     <CartItem
                         key={cartItem.id}
                         cartItem={cartItem}
                     />
                 ))}
-            </ul>
-            <footer>
+            </List>
+            <Footer>
                 {formatMoney(calcTotalToPrice(me.cart))}
-            </footer>
+            </Footer>
         </CartStyles>
     )
 }
