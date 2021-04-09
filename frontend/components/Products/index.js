@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client"
 import gql from "graphql-tag"
-import Product from '../Product'
+import Product from '../Product/'
 import { perPage } from '../../config'
 import { ProductsStyles } from './styles'
 

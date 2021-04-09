@@ -1,16 +1,14 @@
-import ItemStyles from './styles/ItemStyles'
-import Title from './styles/Title'
 import Link from 'next/link'
-import PriceTag from './styles/PriceTag'
-import formatMoney from '../lib/formatMoney'
-import DeleteProduct from './DeleteProduct'
-import AddToCart from './AddToCart'
+import formatMoney from '../../lib/formatMoney'
+import DeleteProduct from '../DeleteProduct'
+import AddToCart from '../AddToCart'
+import { Image, ProductStyles, Title } from './styles'
 
 export default function Product({ product }) {
     return (
-        <ItemStyles>
-            <img
-                src={product?.photo?.image?.publicUrlTransformed}
+        <ProductStyles>
+            <Image
+                style={{backgroundImage:`url(${product?.photo?.image?.publicUrlTransformed})`}}
                 alt={product.name}
             />
             <Title>
@@ -18,7 +16,7 @@ export default function Product({ product }) {
                     {product.name}
                 </Link>
             </Title>
-            <PriceTag>{formatMoney(product.price)}</PriceTag>
+            <p>{formatMoney(product.price)}</p>
             <p>{product.description}</p>
             {/* TODO: Add buttons to edit and delete item */}
             <div className='buttonList'>
@@ -31,6 +29,6 @@ export default function Product({ product }) {
                 <AddToCart id={product.id}/>
                 <DeleteProduct id={product.id}>Delete</DeleteProduct>
             </div>
-        </ItemStyles>
+        </ProductStyles>
     )
 }
