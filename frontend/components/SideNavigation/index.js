@@ -10,14 +10,14 @@ export default function SideNavigation() {
   const {openCart, toggleCart} = useCart()
   return (
     <SideNavigationStyles>
-      <Feature>
-        <FeatureHeader>
-          <Link href="/products">Products</Link>
-        </FeatureHeader>
-      </Feature>
       {
         user && (
           <>
+            <Feature>
+              <FeatureHeader>
+                <Link href="/products">Products</Link>
+              </FeatureHeader>
+            </Feature>
             <Feature>
               <FeatureHeader>
                   <Link href="/sell">Sell</Link>
