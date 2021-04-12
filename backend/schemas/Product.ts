@@ -1,13 +1,21 @@
-import { integer, relationship, select, text } from "@keystone-next/fields";
-import { list } from "@keystone-next/keystone/schema";
+
+import { integer, select, text, relationship } from '@keystone-next/fields';
+import { list } from '@keystone-next/keystone/schema';
+import { isSignedIn } from '../access';
 
 export const Product = list({
+    access: {
+        create: isSignedIn,
+        read: isSignedIn,
+        update: isSignedIn,
+        delete: isSignedIn,
+    },
     fields: {
         name: text({ isRequired: true }),
         description: text({
             ui: {
-                displayMode: 'textarea'
-            }
+                displayMode: 'textarea',
+            },
         }),
         photo: relationship({
             ref: 'ProductImage.product',
@@ -16,7 +24,7 @@ export const Product = list({
                 cardFields: ['image', 'altText'],
                 inlineCreate: { fields: ['image', 'altText'] },
                 inlineEdit: { fields: ['image', 'altText'] },
-            }
+            },
         }),
         status: select({
             options: [
@@ -27,11 +35,10 @@ export const Product = list({
             defaultValue: 'DRAFT',
             ui: {
                 displayMode: 'segmented-control',
-                createView: {
-                    fieldMode: 'hidden'
-                }
-            }
+                createView: { fieldMode: 'hidden' },
+            },
         }),
         price: integer(),
-    }
-})
+        // TODO: Photo
+    },
+});
