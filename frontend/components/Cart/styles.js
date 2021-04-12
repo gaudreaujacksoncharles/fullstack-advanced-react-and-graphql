@@ -7,7 +7,7 @@ export const CartStyles = styled.div`
   background-color:white;
   border-radius:5px;
   box-shadow:var(--cartBoxShadow);
-  transform: translateX(100%);
+  transform: translateX(110%);
   transition: all 0.3s;
   ${(props) => props.open && `transform: translateX(0);`};
 `;

@@ -7,7 +7,7 @@ import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton, Options} f
 
 export default function SideNavigation() {
   const user = useUser()
-  const {openCart} = useCart()
+  const {openCart, toggleCart} = useCart()
   return (
     <SideNavigationStyles>
       <Feature>
@@ -35,7 +35,7 @@ export default function SideNavigation() {
             </Feature>
             <Feature>
               <FeatureHeader>
-                  <FeatureButton type='button' onClick={openCart}>
+                  <FeatureButton type='button' onClick={toggleCart}>
                     Cart
                   </FeatureButton>
                   <CartCount count={user.cart.reduce(

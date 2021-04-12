@@ -20,7 +20,7 @@ export default function Product({ product }) {
                 <Price>{formatMoney(product.price)}</Price>
                 <Description>{product.description}</Description>
                 {/* TODO: Add buttons to edit and delete item */}
-                <ButtonsList className='buttonList'>
+                <ButtonsList>
                     <Link href={{
                         pathname: '/update',
                         query: {
