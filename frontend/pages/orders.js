@@ -1,4 +1,5 @@
-import { ModuleTitle } from '../components/Module/styles'
+import gql from "graphql-tag";
+import { ModuleTitle } from "../components/Module/styles";
 
 export default function OrdersPage() {
     return (

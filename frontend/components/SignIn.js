@@ -35,9 +35,7 @@ export default function SignIn() {
   })
   async function handleSubmit(e) {
     e.preventDefault() // stop the form from submitting
-    console.log('inputs:', inputs)
     const res = await signin()
-    console.log('response:', res)
     resetForm()
     // Send the email and password to the graphqlAPI
   }

@@ -5,7 +5,6 @@ import RemoveFromCart from '../RemoveFromCart/'
 export default function CartItem({ cartItem }) {
     const {product} = cartItem
     if (!product) return null
-    console.log('product', product);
     return (
         <CartItemStyles>
             <Image style={{backgroundImage:`url(${cartItem.product.photo.image.publicUrlTransformed})`}} alt={product.name} />

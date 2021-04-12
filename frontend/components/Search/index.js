@@ -40,7 +40,6 @@ export default function Search() {
   const findItemsButChill = debounce(findItems, 1);
   resetIdCounter();
   function handleClick(id) {
-    console.log(id)
     router.push({
         pathname: `/product/${id}`
     })

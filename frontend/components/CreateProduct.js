@@ -47,7 +47,6 @@ export default function CreateProduct() {
   return (
     <Form onSubmit={async (e) => {
       e.preventDefault()
-      console.log(inputs)
       const res = await createProduct()
       clearForm()
       Router.push({
