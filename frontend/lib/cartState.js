@@ -6,7 +6,7 @@ const LocalStateProvider = LocalStateContext.Provider
 
 function CartStateProvider({ children }) {
     // This is our own custom provider. We will store data (state) and functionality (updaters) in here and anyone can access it visa the consumer!
-    const [cartOpen, setCartOpen] = useState(false)
+    const [cartOpen, setCartOpen] = useState(true)
 
     function toggleCart() {
         setCartOpen(!cartOpen)

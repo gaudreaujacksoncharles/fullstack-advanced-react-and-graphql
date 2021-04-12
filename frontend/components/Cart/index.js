@@ -5,6 +5,7 @@ import { cacheSlot } from '@apollo/client/cache'
 import calcTotalToPrice from '../../lib/calcTotalToPrice'
 import { useCart } from '../../lib/cartState'
 import CartItem from '../CartItem'
+import { Checkout } from '../Checkout'
 
 export default function Cart(){
     const me = useUser()
@@ -28,6 +29,7 @@ export default function Cart(){
             </List>
             <Footer>
                 {formatMoney(calcTotalToPrice(me.cart))}
+                <Checkout/>
             </Footer>
         </CartStyles>
     )
