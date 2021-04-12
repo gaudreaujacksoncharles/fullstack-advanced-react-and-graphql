@@ -5,6 +5,9 @@ import { useState } from 'react';
 import nProgress from 'nprogress';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
+import { useRouter } from 'next/dist/client/router';
+import { useCart } from '../../lib/cartState'
+import { CURRENT_USER_QUERY } from '../User'
 
 const CREATE_ORDER_MUTATION = gql`
     mutation CREATE_ORDER_MUTATION($token: String!) {
@@ -27,7 +30,11 @@ function CheckoutForm() {
     const [loading, setLoading] = useState(false)
     const stripe = useStripe(false)
     const elements = useElements()
-    const [checkout, { error: graphQLError }] = useMutation(CREATE_ORDER_MUTATION)
+    const router = useRouter()
+    const { closeCart } = useCart()
+    const [checkout, { error: graphQLError }] = useMutation(CREATE_ORDER_MUTATION, {
+        refetchQueries: [{ query: CURRENT_USER_QUERY }]
+    })
 
     async function handleSubmit(e) {
         // 1. Stop the form from submiting and turn the loader on
@@ -55,10 +62,14 @@ function CheckoutForm() {
             }
         })
         console.log('Finished with the oder')
-        // 6. Change the page to view the order
         console.log('order', order)
+        // 6. Change the page to view the order
+        router.push({
+            pathname: '/order',
+            query: { id: order.data.checkout.id },
+        })
         // 7. Cose the cart
-        
+        closeCart()
         // 8. Turn the loader off
         setLoading(false)
         nProgress.done()
