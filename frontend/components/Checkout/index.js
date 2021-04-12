@@ -58,7 +58,7 @@ function CheckoutForm() {
         // 6. Change the page to view the order
         console.log('order', order)
         // 7. Cose the cart
-
+        
         // 8. Turn the loader off
         setLoading(false)
         nProgress.done()
