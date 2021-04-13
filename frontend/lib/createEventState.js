@@ -6,7 +6,7 @@ const LocalStateProvider = LocalStateContext.Provider
 
 function CreateEventStateProvider({ children }) {
     // This is our own custom provider. We will store data (state) and functionality (updaters) in here and anyone can access it visa the consumer!
-    const [createEventOpen, setCreateEventOpen] = useState(false)
+    const [createEventOpen, setCreateEventOpen] = useState(true)
 
     function toggleCreateEvent() {
         console.log(createEventOpen);
