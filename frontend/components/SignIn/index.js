@@ -4,7 +4,7 @@ import Form from '../styles/Form'
 import useForm from '../../lib/useForm'
 import { CURRENT_USER_QUERY } from '../User'
 import Error from '../ErrorMessage'
-import { SignInStyles } from './styles'
+import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationFieldSet, AuthenticationSubmitButton } from '../Authentication/'
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -46,36 +46,38 @@ export default function SignIn() {
       ? data?.authenticateUserWithPassword
       : undefined
   return (
-    <SignInStyles>
-      <Form method="POST" onSubmit={handleSubmit}>
-        <h2>Sign Into Your Account</h2>
-        <Error error={error} />
-        <fieldset>
-          <label htmlFor="email">
-            Email
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              autoComplete="email"
-              value={inputs.email}
-              onChange={handleChange}
-            />
-          </label>
-          <label htmlFor="password">
-            Password
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              autoComplete="password"
-              value={inputs.password}
-              onChange={handleChange}
-            />
-          </label>
-          <button type="submit">Sign In</button>
-        </fieldset>
-      </Form>
-    </SignInStyles>
+    <AuthenticationStyles>
+      <AuthenticationCenter>
+        <AuthenticationTitle>Sign in</AuthenticationTitle>
+        <AuthenticationForm method="POST" onSubmit={handleSubmit}>
+          <Error error={error} />
+          <AuthenticationFieldSet>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                autoComplete="email"
+                value={inputs.email}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="password">
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                autoComplete="password"
+                value={inputs.password}
+                onChange={handleChange}
+              />
+            </label>
+          </AuthenticationFieldSet>
+          <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
+        </AuthenticationForm>
+      </AuthenticationCenter>
+    </AuthenticationStyles>
   )
 }
