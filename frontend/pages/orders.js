@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ErrorMessage from '../components/ErrorMessage';
 import formatMoney from '../lib/formatMoney';
 import OrderItemStyles from '../components/styles/OrderItemStyles';
+import PleaseSignIn from '../components/PleaseSignIn';
 
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
@@ -48,7 +49,7 @@ export default function OrdersPage() {
   if (error) return <ErrorMessage error={error} />;
   const { allOrders } = data;
   return (
-    <div>
+    <PleaseSignIn>
       <Head>
         <title>Your Orders ({allOrders.length})</title>
       </Head>
@@ -80,6 +81,6 @@ export default function OrdersPage() {
           </OrderItemStyles>
         ))}
       </OrderUl>
-    </div>
+    </PleaseSignIn>
   );
 }

@@ -5,8 +5,10 @@ import TopNavigation from '../TopNavigation';
 import Module from '../Module';
 import { GlobalStyles } from '../GlobalStyles';
 import { PageStyles } from '../Page/styles';
+import { useUser } from '../User';
 
 export default function Page({ children }) {
+  const me = useUser()
   return (
     <PageStyles>
       <GlobalStyles />

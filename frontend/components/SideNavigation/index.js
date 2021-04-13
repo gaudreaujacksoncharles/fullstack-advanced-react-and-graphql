@@ -7,7 +7,8 @@ import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton, Options} f
 
 export default function SideNavigation() {
   const user = useUser()
-  const {openCart, toggleCart} = useCart()
+  if (!user) return null
+  const {toggleCart} = useCart()
   return (
     <SideNavigationStyles>
       {

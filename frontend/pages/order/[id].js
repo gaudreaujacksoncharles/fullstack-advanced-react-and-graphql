@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import Head from 'next/head';
 import ErrorMessage from '../../components/ErrorMessage';
+import PleaseSignIn from '../../components/PleaseSignIn';
 import OrderStyles from '../../components/styles/OrderStyles';
 import formatMoney from '../../lib/formatMoney';
 
@@ -37,40 +38,42 @@ export default function SingleOrderPage({ query }) {
   if (error) return <ErrorMessage error={error} />;
   const { order } = data;
   return (
-    <OrderStyles>
-      <Head>
-        <title>Sick Fits - {order.id}</title>
-      </Head>
-      <p>
-        <span>Order Id:</span>
-        <span>{order.id}</span>
-      </p>
-      <p>
-        <span>Charge:</span>
-        <span>{order.charge}</span>
-      </p>
-      <p>
-        <span>Order Total:</span>
-        <span>{formatMoney(order.total)}</span>
-      </p>
-      <p>
-        <span>ItemCount:</span>
-        <span>{order.items.length}</span>
-      </p>
-      <div className="items">
-        {order.items.map((item) => (
-          <div className="order-item" key={item.id}>
-            <img src={item.photo.image.publicUrlTransformed} alt={item.title} />
-            <div className="item-details">
-              <h2>{item.name}</h2>
-              <p>Qty: {item.quantity}</p>
-              <p>Each: {formatMoney(item.price)}</p>
-              <p>Sub Total: {formatMoney(item.price * item.quantity)}</p>
-              <p>{item.description}</p>
+    <PleaseSignIn>
+      <OrderStyles>
+        <Head>
+          <title>Sick Fits - {order.id}</title>
+        </Head>
+        <p>
+          <span>Order Id:</span>
+          <span>{order.id}</span>
+        </p>
+        <p>
+          <span>Charge:</span>
+          <span>{order.charge}</span>
+        </p>
+        <p>
+          <span>Order Total:</span>
+          <span>{formatMoney(order.total)}</span>
+        </p>
+        <p>
+          <span>ItemCount:</span>
+          <span>{order.items.length}</span>
+        </p>
+        <div className="items">
+          {order.items.map((item) => (
+            <div className="order-item" key={item.id}>
+              <img src={item.photo.image.publicUrlTransformed} alt={item.title} />
+              <div className="item-details">
+                <h2>{item.name}</h2>
+                <p>Qty: {item.quantity}</p>
+                <p>Each: {formatMoney(item.price)}</p>
+                <p>Sub Total: {formatMoney(item.price * item.quantity)}</p>
+                <p>{item.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </OrderStyles>
+          ))}
+        </div>
+      </OrderStyles>
+    </PleaseSignIn>
   );
 }
