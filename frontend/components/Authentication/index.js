@@ -35,6 +35,7 @@ export const AuthenticationForm = styled.form`
 export const AuthenticationFieldSet = styled.fieldset`
     display:flex;
     flex-direction:column;
+    width:340px;
     /* border */
     border-width:1px;
     border-style:solid;
@@ -73,9 +74,24 @@ export const AuthenticationSubmitButton = styled.button`
 export const AuthenticationLabel = styled.label`
     display:flex;
     flex-direction:column;
+    margin-top:.8rem;
+    &:first-of-type {
+        margin-top:0;
+    }
+`
+export const AuthenticationLabelText = styled.label`
+    display:flex;
+    flex-direction:column;
+    font-size:1.4rem;
+    font-weight:500;
+    margin-top:.8rem;
+    &:first-of-type {
+        margin-top:0;
+    }
 `
 export const AuthenticationInput = styled.input`
     display:flex;
+    width:100%;
     height:40px;
     /* font/text */
     font-size:1.4rem;
