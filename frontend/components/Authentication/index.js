@@ -76,4 +76,22 @@ export const AuthenticationLabel = styled.label`
 `
 export const AuthenticationInput = styled.input`
     display:flex;
+    height:40px;
+    /* font/text */
+    font-size:1.4rem;
+    font-weight:500;
+    /* padding */
+    padding:.4rem .8rem;
+    /* border */
+    border-width:1px;
+    border-style:solid;
+    border-top-color:var(--inputBorderTopColor);
+    border-left-color:var(--inputBorderLeftColor);
+    border-right-color:var(--inputBorderRightColor);
+    border-bottom-color:var(--inputBorderBottomColor);
+    border-radius:3px;
+    /* box-shadow */
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.2);
+    /* appearance */
+    appearance:none;
 `

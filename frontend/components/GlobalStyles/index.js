@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { darken } from 'polished'
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -34,10 +35,15 @@ export const GlobalStyles = createGlobalStyle`
     /* Cart Item */
     --cartItemPaddingX: 1.2rem;
     /* White Button */
-    --whiteButtonBorderTopColor:blue;
-    --whiteButtonBorderBottomColor:green;
+    --whiteButtonBorderTopColor:darken(.2, '#FFFFFF');
+    --whiteButtonBorderBottomColor:blue;
     --whiteButtonBorderLeftColor:green;
-    --whiteButtonBorderRightColor:red;
+    --whiteButtonBorderRightColor:green;
+    /* Input */
+    --inputBorderTopColor:red;
+    --inputBorderLeftColor:blue;
+    --inputBorderRightColor:blue;
+    --inputBorderBottomColor:green;
   }
   *, *:before, *:after {
     font-smooth: always;
