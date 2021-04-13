@@ -6,9 +6,11 @@ import Module from '../Module';
 import { GlobalStyles } from '../GlobalStyles';
 import { PageStyles } from '../Page/styles';
 import { useUser } from '../User';
+import { useCreateEvent } from '../../lib/createEventState';
 
 export default function Page({ children }) {
   const me = useUser()
+  const { createEventOpen } = useCreateEvent()
   return (
     <PageStyles>
       <GlobalStyles />
@@ -16,6 +18,9 @@ export default function Page({ children }) {
       <SideNavigation/>
       <Module>{children}</Module>
       <Cart/>
+      {
+        createEventOpen && <p>Create!!!!</p>
+      }
     </PageStyles>
   )
 }

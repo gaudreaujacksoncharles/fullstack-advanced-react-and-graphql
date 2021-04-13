@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import CartCount from '../CartCount'
 import { useCart } from '../../lib/cartState';
+import { useCreateEvent } from '../../lib/createEventState';
 import SignOut from '../SignOut/';
 import { useUser } from '../User'
 import { SideNavigationStyles, Feature, FeatureHeader, FeatureButton, Options} from './styles';
@@ -9,6 +10,7 @@ export default function SideNavigation() {
   const user = useUser()
   if (!user) return null
   const {toggleCart} = useCart()
+  const {toggleCreateEvent} = useCreateEvent()
   return (
     <SideNavigationStyles>
       {
@@ -31,7 +33,9 @@ export default function SideNavigation() {
             </Feature>
             <Feature>
               <FeatureHeader>
-                  <FeatureButton>Create event</FeatureButton>
+                  <FeatureButton type='button' onClick={toggleCreateEvent}>
+                    Create event
+                  </FeatureButton>
               </FeatureHeader>
             </Feature>
             <Feature>

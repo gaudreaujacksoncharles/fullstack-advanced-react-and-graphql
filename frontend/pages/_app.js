@@ -5,7 +5,7 @@ import '../components/styles/nprogress.css';
 import { ApolloProvider } from '@apollo/client';
 import withData from '../lib/withData';
 import { CartStateProvider } from '../lib/cartState';
-import SideNavigation from '../components/SideNavigation';
+import { CreateEventStateProvider, useCreateEvent } from '../lib/createEventState';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -14,11 +14,13 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps, apollo }) {
   return (
     <ApolloProvider client={apollo}>
-      <CartStateProvider>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </CartStateProvider>
+      <CreateEventStateProvider>
+        <CartStateProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </CartStateProvider>
+      </CreateEventStateProvider>
     </ApolloProvider>
   )
 }
