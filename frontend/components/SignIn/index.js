@@ -3,7 +3,8 @@ import { useMutation } from '@apollo/client'
 import useForm from '../../lib/useForm'
 import { CURRENT_USER_QUERY } from '../User'
 import Error from '../ErrorMessage'
-import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationFieldSet, AuthenticationSubmitButton, AuthenticationLabel, AuthenticationInput, AuthenticationLabelText } from '../Authentication/'
+import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationPanel, AuthenticationSubmitButton, AuthenticationLabel, AuthenticationInput, AuthenticationLabelText, AuthenticationLabelHeader } from '../Authentication/'
+import PublicTopNavigation from '../PublicTopNavigation'
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -46,14 +47,17 @@ export default function SignIn() {
       : undefined
   return (
     <>
+      <PublicTopNavigation/>
       <AuthenticationStyles>
         <AuthenticationCenter>
           <AuthenticationTitle>Sign in</AuthenticationTitle>
           <AuthenticationForm method="POST" onSubmit={handleSubmit}>
             <Error error={error} />
-            <AuthenticationFieldSet>
+            <AuthenticationPanel>
               <AuthenticationLabel htmlFor="email">
-                <AuthenticationLabelText>Email</AuthenticationLabelText>
+                <AuthenticationLabelHeader>
+                  <AuthenticationLabelText>Email</AuthenticationLabelText>
+                </AuthenticationLabelHeader>
                 <AuthenticationInput
                   type="email"
                   name="email"
@@ -74,7 +78,7 @@ export default function SignIn() {
                   onChange={handleChange}
                 />
               </AuthenticationLabel>
-            </AuthenticationFieldSet>
+            </AuthenticationPanel>
             <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
           </AuthenticationForm>
         </AuthenticationCenter>

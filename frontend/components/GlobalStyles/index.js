@@ -9,16 +9,8 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
   html {
-    --red: #ff0000;
-    --black: #393939;
-    --grey: #3A3A3A;
-    --gray: var(--grey);
-    --lightGrey: #e1e1e1;
-    --lightGray: var(--lightGrey);
-    --offWhite: #ededed;
-    --maxWidth: 1000px;
-    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     font-size:10px;
+    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     /* TopNavigation */
     --topNavigationHeight:5.6rem;
@@ -34,20 +26,35 @@ export const GlobalStyles = createGlobalStyle`
     --cartBoxShadow:0 12px 24px 0 rgba(0,0,0,0.17);
     /* Cart Item */
     --cartItemPaddingX: 1.2rem;
+    /* Title */
+    --titleColor:${darken(.88, '#FFFFFF')};
     /* White Button */
-    --whiteButtonColor:${darken(.15, '#FFFFFF')};
+    --whiteButtonHeight:2.6rem;
+    --whiteButtonColor:${darken(.7, '#FFFFFF')};
+    --whiteButtonFontWeight:700;
     --whiteButtonBorderTopColor:${darken(.15, '#FFFFFF')};
     --whiteButtonBorderLeftColor:${darken(.2, '#FFFFFF')};
     --whiteButtonBorderRightColor:${darken(.2, '#FFFFFF')};
     --whiteButtonBorderBottomColor:${darken(.25, '#FFFFFF')};
+    --whiteButtonPadding:0 .8rem;
     --whiteButtonBoxShadow: 0 1px 0 0 ${darken(.2, '#FFFFFF')};
+        /* Pane */
+    --panelBackground:darken(.45, #FFFFFF);
+    --panelPadding:1.6rem;
+    --panelBorderTopColor:${darken(.15, '#FFFFFF')};
+    --panelBorderLeftColor:${darken(.2, '#FFFFFF')};
+    --panelBorderRightColor:${darken(.2, '#FFFFFF')};
+    --panelBorderBottomColor:${darken(.25, '#FFFFFF')};
+    --panelBorderRadius: 5px;
+    //--panelBoxShadow: 0 1px 0 0 ${darken(.1, '#FFFFFF')};
+    --panelBoxShadow: 0 1px 0 0 ${darken(.02, '#FFFFFF')};
     /* Input */
-    --inputColor:${darken(.15, '#FFFFFF')};
-    --inputBorderTopColor:red;
-    --inputBorderLeftColor:blue;
-    --inputBorderRightColor:blue;
-    --inputBorderBottomColor:green;
-    --inputBoxShadow: 0 1px 0 0 ${darken(.2, '#FFFFFF')};
+    --inputColor:${darken(.25, '#FFFFFF')};
+    --inputBorderTopColor:${darken(.15, '#FFFFFF')};
+    --inputBorderLeftColor:${darken(.2, '#FFFFFF')};
+    --inputBorderRightColor:${darken(.2, '#FFFFFF')};
+    --inputBorderBottomColor:${darken(.25, '#FFFFFF')};
+    --inputBoxShadow: 0 1px 0 0 ${darken(.13, '#FFFFFF')};
   }
   *, *:before, *:after {
     font-smooth: always;

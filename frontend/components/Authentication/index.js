@@ -20,6 +20,7 @@ export const AuthenticationCenter = styled.div`
 export const AuthenticationTitle = styled.h1`
     display:flex;
     align-self:flex-start;
+    color:var(--titleColor);
     font-size:2.4rem;
     margin-bottom:.4rem;
 `
@@ -32,34 +33,38 @@ export const AuthenticationForm = styled.form`
     display:flex;
     flex-direction:column;
 `
-export const AuthenticationFieldSet = styled.fieldset`
+export const AuthenticationPanel = styled.fieldset`
     display:flex;
     flex-direction:column;
     width:340px;
-    background-color:white;
+    background:var(--panelBackground);
     /* padding */
-    padding:1.6rem 1.6rem;
+    padding:var(--panelPadding);
     /* border */
     border-width:1px;
     border-style:solid;
-    border-top-color:red;
-    border-left-color:blue;
-    border-right-color:blue;
-    border-bottom-color:blue;
-    border-radius:5px;
+    border-top-color:var(--panelBorderTopColor);
+    border-left-color:var(--panelBorderLeftColor);
+    border-right-color:var(--panelBorderRightColor);
+    border-bottom-color:var(--panelBorderBottomColor);
+    border-radius:var(--panelBorderRadius);
     /* box-shadow */
-    box-shadow: 0 1px 0 0 rgba(0,0,0,.2);
+    box-shadow:var(--panelBoxShadow);
 `
 export const AuthenticationSubmitButton = styled.button`
     display:flex;
-    flex-direction:column;
     align-self:flex-start;
+    align-items:center;
+    height:var(--whiteButtonHeight);
     background-color:white;
-    /* font/text */
+    /* color/font/text */
+    color:var(--whiteButtonColor);
     font-size:1.4rem;
+    font-weight:var(--whiteButtonFontWeight);
+    line-height:1.4rem;
     font-weight:500;
     /* padding */
-    padding:.4rem .8rem;
+    padding:var(--whiteButtonPadding);
     /* border */
     border-width:1px;
     border-style:solid;
@@ -81,6 +86,10 @@ export const AuthenticationLabel = styled.label`
     &:first-of-type {
         margin-top:0;
     }
+`
+export const AuthenticationLabelHeader = styled.header`
+    display:flex;
+    align-items:center;
 `
 export const AuthenticationLabelText = styled.label`
     display:flex;
