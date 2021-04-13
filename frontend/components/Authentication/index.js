@@ -35,6 +35,16 @@ export const AuthenticationForm = styled.form`
 export const AuthenticationFieldSet = styled.fieldset`
     display:flex;
     flex-direction:column;
+    /* border */
+    border-width:1px;
+    border-style:solid;
+    border-top-color:red;
+    border-left-color:blue;
+    border-right-color:blue;
+    border-bottom-color:blue;
+    border-radius:5px;
+    /* box-shadow */
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.2);
 `
 export const AuthenticationSubmitButton = styled.button`
     display:flex;
@@ -49,14 +59,21 @@ export const AuthenticationSubmitButton = styled.button`
     /* border */
     border-width:1px;
     border-style:solid;
-    border-top-color:red;
-    border-left-color:blue;
-    border-right-color:blue;
-    border-bottom-color:blue;
+    border-top-color:var(--whiteButtonBorderTopColor);
+    border-left-color:var(--whiteButtonBorderLeftColor);
+    border-right-color:var(--whiteButtonBorderRightColor);
+    border-bottom-color:var(--whiteButtonBorderBottomColor);
     border-radius:3px;
     /* box-shadow */
     box-shadow: 0 1px 0 0 rgba(0,0,0,.2);
     /* appearance */
     appearance:none;
     margin-top:1.6rem;
+`
+export const AuthenticationLabel = styled.label`
+    display:flex;
+    flex-direction:column;
+`
+export const AuthenticationInput = styled.input`
+    display:flex;
 `

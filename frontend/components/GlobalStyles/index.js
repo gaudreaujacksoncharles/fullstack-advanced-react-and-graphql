@@ -33,6 +33,11 @@ export const GlobalStyles = createGlobalStyle`
     --cartBoxShadow:0 12px 24px 0 rgba(0,0,0,0.17);
     /* Cart Item */
     --cartItemPaddingX: 1.2rem;
+    /* White Button */
+    --whiteButtonBorderTopColor:blue;
+    --whiteButtonBorderBottomColor:green;
+    --whiteButtonBorderLeftColor:green;
+    --whiteButtonBorderRightColor:red;
   }
   *, *:before, *:after {
     font-smooth: always;

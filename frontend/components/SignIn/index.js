@@ -4,7 +4,7 @@ import Form from '../styles/Form'
 import useForm from '../../lib/useForm'
 import { CURRENT_USER_QUERY } from '../User'
 import Error from '../ErrorMessage'
-import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationFieldSet, AuthenticationSubmitButton } from '../Authentication/'
+import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationFieldSet, AuthenticationSubmitButton, AuthenticationLabel, AuthenticationInput } from '../Authentication/'
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -52,9 +52,9 @@ export default function SignIn() {
         <AuthenticationForm method="POST" onSubmit={handleSubmit}>
           <Error error={error} />
           <AuthenticationFieldSet>
-            <label htmlFor="email">
+            <AuthenticationLabel htmlFor="email">
               Email
-              <input
+              <AuthenticationInput
                 type="email"
                 name="email"
                 placeholder="Email Address"
@@ -62,10 +62,10 @@ export default function SignIn() {
                 value={inputs.email}
                 onChange={handleChange}
               />
-            </label>
-            <label htmlFor="password">
+            </AuthenticationLabel>
+            <AuthenticationLabel htmlFor="password">
               Password
-              <input
+              <AuthenticationInput
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -73,7 +73,7 @@ export default function SignIn() {
                 value={inputs.password}
                 onChange={handleChange}
               />
-            </label>
+            </AuthenticationLabel>
           </AuthenticationFieldSet>
           <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
         </AuthenticationForm>

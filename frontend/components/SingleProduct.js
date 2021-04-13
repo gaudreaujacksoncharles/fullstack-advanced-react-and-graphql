@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client"
 import gql from "graphql-tag" 
-import DisplayError from "./ErrorMessage" 
+import DisplayError from "./ErrorMessage"
+import PleaseSignIn from "./PleaseSignIn"
 import Head from 'next/head'
 import styled from "styled-components"
 
@@ -40,18 +41,20 @@ export default function SingleProduct({ id }) {
     if (error) return <DisplayError error={error} />
     const { Product } = data
     return (
-        <ProductStyles>
-            <Head>
-                <title>{Product.name}</title>
-            </Head>
-            <img
-                src={Product.photo.image.publicUrlTransformed}
-                alt={Product.photo.altText}
-            />
-            <div className="details">
-                <h2>{Product.name}</h2>
-                <p>{Product.description}</p>
-            </div>
-        </ProductStyles>
+        <PleaseSignIn>
+            <ProductStyles>
+                <Head>
+                    <title>{Product.name}</title>
+                </Head>
+                <img
+                    src={Product.photo.image.publicUrlTransformed}
+                    alt={Product.photo.altText}
+                />
+                <div className="details">
+                    <h2>{Product.name}</h2>
+                    <p>{Product.description}</p>
+                </div>
+            </ProductStyles>
+        </PleaseSignIn>
     )
 }

@@ -7,6 +7,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import formatMoney from '../lib/formatMoney';
 import OrderItemStyles from '../components/styles/OrderItemStyles';
 import PleaseSignIn from '../components/PleaseSignIn';
+import {ModuleTitle} from '../components/Module/styles';
 
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
@@ -53,7 +54,7 @@ export default function OrdersPage() {
       <Head>
         <title>Your Orders ({allOrders.length})</title>
       </Head>
-      <h2>You have {allOrders.length} orders!</h2>
+      <ModuleTitle>You have {allOrders.length} orders!</ModuleTitle>
       <OrderUl>
         {allOrders.map((order) => (
           <OrderItemStyles>
