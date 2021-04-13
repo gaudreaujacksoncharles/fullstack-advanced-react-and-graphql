@@ -17,4 +17,5 @@ export const ModuleTitle = styled.h1`
     font-size:1.6rem;
     line-height:1.6rem;
     font-weight:var(--currentUserFontWeight);
+    margin-bottom:1.6rem;
 `

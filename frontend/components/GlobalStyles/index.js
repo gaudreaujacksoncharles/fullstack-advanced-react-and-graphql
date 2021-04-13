@@ -35,15 +35,19 @@ export const GlobalStyles = createGlobalStyle`
     /* Cart Item */
     --cartItemPaddingX: 1.2rem;
     /* White Button */
-    --whiteButtonBorderTopColor:darken(.2, '#FFFFFF');
-    --whiteButtonBorderBottomColor:blue;
-    --whiteButtonBorderLeftColor:green;
-    --whiteButtonBorderRightColor:green;
+    --whiteButtonColor:${darken(.15, '#FFFFFF')};
+    --whiteButtonBorderTopColor:${darken(.15, '#FFFFFF')};
+    --whiteButtonBorderLeftColor:${darken(.2, '#FFFFFF')};
+    --whiteButtonBorderRightColor:${darken(.2, '#FFFFFF')};
+    --whiteButtonBorderBottomColor:${darken(.25, '#FFFFFF')};
+    --whiteButtonBoxShadow: 0 1px 0 0 ${darken(.2, '#FFFFFF')};
     /* Input */
+    --inputColor:${darken(.15, '#FFFFFF')};
     --inputBorderTopColor:red;
     --inputBorderLeftColor:blue;
     --inputBorderRightColor:blue;
     --inputBorderBottomColor:green;
+    --inputBoxShadow: 0 1px 0 0 ${darken(.2, '#FFFFFF')};
   }
   *, *:before, *:after {
     font-smooth: always;
@@ -86,10 +90,27 @@ export const GlobalStyles = createGlobalStyle`
     padding-inline-start: 0;
   }
 
+  input {
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
+    &::placeholder {
+      font-smooth: always;
+      text-rendering: optimizeLegibility;
+    }
+  }
   input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
   input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+  fieldset {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+  }
 `
