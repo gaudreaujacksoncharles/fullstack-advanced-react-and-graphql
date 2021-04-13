@@ -35,6 +35,8 @@ export const GlobalStyles = createGlobalStyle`
     --cartItemPaddingX: 1.2rem;
   }
   *, *:before, *:after {
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
     box-sizing: inherit;
   }
   body {
