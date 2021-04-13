@@ -31,6 +31,16 @@ export default function SideNavigation() {
             </Feature>
             <Feature>
               <FeatureHeader>
+                  <FeatureButton>Create event</FeatureButton>
+              </FeatureHeader>
+            </Feature>
+            <Feature>
+              <FeatureHeader>
+                  <Link href="/events">Events</Link>
+              </FeatureHeader>
+            </Feature>
+            <Feature>
+              <FeatureHeader>
                   <Link href="/account">Account</Link>
               </FeatureHeader>
             </Feature>
