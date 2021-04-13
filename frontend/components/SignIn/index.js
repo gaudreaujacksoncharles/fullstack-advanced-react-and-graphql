@@ -46,38 +46,40 @@ export default function SignIn() {
       ? data?.authenticateUserWithPassword
       : undefined
   return (
-    <AuthenticationStyles>
-      <AuthenticationCenter>
-        <AuthenticationTitle>Sign in</AuthenticationTitle>
-        <AuthenticationForm method="POST" onSubmit={handleSubmit}>
-          <Error error={error} />
-          <AuthenticationFieldSet>
-            <AuthenticationLabel htmlFor="email">
-              <AuthenticationLabelText>Email</AuthenticationLabelText>
-              <AuthenticationInput
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                autoComplete="email"
-                value={inputs.email}
-                onChange={handleChange}
-              />
-            </AuthenticationLabel>
-            <AuthenticationLabel htmlFor="password">
-              <AuthenticationLabelText>Password</AuthenticationLabelText>
-              <AuthenticationInput
-                type="password"
-                name="password"
-                placeholder="Password"
-                autoComplete="password"
-                value={inputs.password}
-                onChange={handleChange}
-              />
-            </AuthenticationLabel>
-          </AuthenticationFieldSet>
-          <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
-        </AuthenticationForm>
-      </AuthenticationCenter>
-    </AuthenticationStyles>
+    <>
+      <AuthenticationStyles>
+        <AuthenticationCenter>
+          <AuthenticationTitle>Sign in</AuthenticationTitle>
+          <AuthenticationForm method="POST" onSubmit={handleSubmit}>
+            <Error error={error} />
+            <AuthenticationFieldSet>
+              <AuthenticationLabel htmlFor="email">
+                <AuthenticationLabelText>Email</AuthenticationLabelText>
+                <AuthenticationInput
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  autoComplete="email"
+                  value={inputs.email}
+                  onChange={handleChange}
+                />
+              </AuthenticationLabel>
+              <AuthenticationLabel htmlFor="password">
+                <AuthenticationLabelText>Password</AuthenticationLabelText>
+                <AuthenticationInput
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  autoComplete="password"
+                  value={inputs.password}
+                  onChange={handleChange}
+                />
+              </AuthenticationLabel>
+            </AuthenticationFieldSet>
+            <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
+          </AuthenticationForm>
+        </AuthenticationCenter>
+      </AuthenticationStyles>
+    </>
   )
 }
