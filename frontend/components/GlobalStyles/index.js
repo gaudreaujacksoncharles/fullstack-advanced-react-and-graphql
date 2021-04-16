@@ -100,6 +100,9 @@ export const GlobalStyles = createGlobalStyle`
   input {
     font-smooth: always;
     text-rendering: optimizeLegibility;
+    &:focus {
+      outline:none;
+    }
     &::placeholder {
       font-smooth: always;
       text-rendering: optimizeLegibility;

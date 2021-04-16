@@ -1,5 +1,5 @@
 import { useCreateEvent } from "../../lib/createEventState";
-import { CreateEventFooter, CreateEventPanel, CreateEventStyles } from "./styles";
+import { CreateEventCenter, CreateEventFooter, CreateEventHeader, CreateEventPanel, CreateEventGeneral, CreateEventStyles, CreateEventInput, CreateEventButton, CreateEventButtonLabel, CreateEventTextarea } from "./styles";
 
 export default function CreateEvent() {
     const { createEventOpen } = useCreateEvent()
@@ -7,9 +7,27 @@ export default function CreateEvent() {
     return (
         <CreateEventStyles>
             <CreateEventPanel>
-                <CreateEventFooter>
-                    
-                </CreateEventFooter>
+                <CreateEventGeneral>
+                    <CreateEventHeader>
+                        <CreateEventInput
+                            placeholder='Title'
+                        />
+                    </CreateEventHeader>                    
+                    <CreateEventCenter>
+                        <CreateEventTextarea
+                            placeholder='Description'
+                        />
+                    </CreateEventCenter>
+                    <CreateEventFooter>
+                        <CreateEventButton>
+                            <CreateEventButton>
+                                <CreateEventButtonLabel>
+                                    Cancel
+                                </CreateEventButtonLabel>  
+                            </CreateEventButton>                         
+                        </CreateEventButton>  
+                    </CreateEventFooter>                    
+                </CreateEventGeneral>
             </CreateEventPanel>
         </CreateEventStyles>
     )
