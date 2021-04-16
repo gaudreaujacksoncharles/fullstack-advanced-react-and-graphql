@@ -12,7 +12,6 @@ export const CreateEventStyles = styled.div`
 export const CreateEventPanel = styled.form`
     display:flex;
     width:auto;
-    height:300px;
     background-color:rgba(255,255,255,1);
     border-radius:5px;
     margin:auto;
@@ -31,7 +30,6 @@ export const CreateEventHeader = styled.header`
 export const CreateEventCenter = styled.div`
     display:flex;
     width:100%;
-    height:48px;
     border-top:1px solid gray;
 `
 export const CreateEventFooter = styled.footer`
@@ -45,27 +43,47 @@ export const CreateEventInput = styled.input`
     display:flex;
     width:100%;
     height:48px;
-    appearance:none;
-    border:none;
+    font-size:var(--createEventInputFontSize);
+    padding-left:var(--createEventInputPaddingX);
+    padding-right:var(--createEventInputPaddingX);
     border-top-left-radius:5px;
     border-top-right-radius:5px;
+    border:none;
+    appearance:none;
+    outline:none;
 `
 export const CreateEventTextarea = styled.textarea`
     display:flex;
     width:100%;
-    height:48px;
-    appearance:none;
+    height:115px;
+    font-size:var(--createEventInputFontSize);
+    padding:var(--createEventInputPaddingY) var(--createEventInputPaddingX);
+    border-top-left-radius:var(--panelBorderRadius);
+    border-top-right-radius:var(--panelBorderRadius);
     border:none;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
+    resize:none;
+    outline:none;
+    appearance:none;
 `
 export const CreateEventButton = styled.button`
     display:flex;
     width:100%;
-    height:48px;
+    height:100%;
+    align-items:center;
+    justify-content:center;
     padding:0 1.6rem;
-    border-top:1px solid gray;
+    border-left:1px solid gray;
+    &:first-of-type {
+        border-left:none;
+    }
 `
-export const CreateEventButtonLabel = styled.span`
+export const CreateEventButtonGrayLabel = styled.span`
     display:flex;
+    font-size:var(--createEventInputFontSize);
+    font-weight:500;
+`
+export const CreateEventButtonGreenLabel = styled.span`
+    display:flex;
+    font-size:var(--createEventInputFontSize);
+    font-weight:500;
 `

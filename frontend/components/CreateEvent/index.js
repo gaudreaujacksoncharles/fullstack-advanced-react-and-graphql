@@ -1,8 +1,8 @@
 import { useCreateEvent } from "../../lib/createEventState";
-import { CreateEventCenter, CreateEventFooter, CreateEventHeader, CreateEventPanel, CreateEventGeneral, CreateEventStyles, CreateEventInput, CreateEventButton, CreateEventButtonLabel, CreateEventTextarea } from "./styles";
+import { CreateEventCenter, CreateEventFooter, CreateEventHeader, CreateEventPanel, CreateEventGeneral, CreateEventStyles, CreateEventInput, CreateEventButton, CreateEventButtonGrayLabel, CreateEventButtonGreenLabel, CreateEventButtonLabel, CreateEventTextarea } from "./styles";
 
 export default function CreateEvent() {
-    const { createEventOpen } = useCreateEvent()
+    const { createEventOpen, closeCreateEvent } = useCreateEvent()
     if (!createEventOpen) return null
     return (
         <CreateEventStyles>
@@ -19,13 +19,16 @@ export default function CreateEvent() {
                         />
                     </CreateEventCenter>
                     <CreateEventFooter>
+                        <CreateEventButton onClick={closeCreateEvent}>
+                            <CreateEventButtonGrayLabel>
+                                Cancel
+                            </CreateEventButtonGrayLabel>  
+                        </CreateEventButton>
                         <CreateEventButton>
-                            <CreateEventButton>
-                                <CreateEventButtonLabel>
-                                    Cancel
-                                </CreateEventButtonLabel>  
-                            </CreateEventButton>                         
-                        </CreateEventButton>  
+                            <CreateEventButtonGreenLabel>
+                                Create
+                            </CreateEventButtonGreenLabel>  
+                        </CreateEventButton>
                     </CreateEventFooter>                    
                 </CreateEventGeneral>
             </CreateEventPanel>
