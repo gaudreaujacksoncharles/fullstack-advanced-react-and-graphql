@@ -11,6 +11,7 @@ import { CartItem } from './schemas/CartItem';
 import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
+import { UserImage } from './schemas/UserImage';
 import { Event } from './schemas/Event';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
@@ -65,6 +66,7 @@ export default withAuth(
         lists: createSchema({
             // Schema items go in here
             User,
+            UserImage,
             Product,
             ProductImage,
             CartItem,

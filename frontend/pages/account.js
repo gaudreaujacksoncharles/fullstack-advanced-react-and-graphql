@@ -1,5 +1,6 @@
 import { ModuleTitle } from '../components/Module/styles'
 import PleaseSignIn from '../components/PleaseSignIn'
+import EditUserProfilePhoto from '../components/EditUserProfilePhoto'
 import { useUser } from '../components/User'
 
 export default function AccountPage() {
@@ -10,6 +11,7 @@ export default function AccountPage() {
                 Account
             </ModuleTitle>
             {me?.name}
+            <EditUserProfilePhoto mt='1.6rem'/>
         </PleaseSignIn>
     )
 }

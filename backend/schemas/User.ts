@@ -20,6 +20,15 @@ export const User = list({
         name: text({ isRequired: true }),
         email: text({ isRequired: true, isUnique: true }),
         password: password(),
+        photo: relationship({
+            ref: 'UserImage.user',
+            ui: {
+                displayMode: 'cards',
+                cardFields: ['image', 'altText'],
+                inlineCreate: { fields: ['image', 'altText'] },
+                inlineEdit: { fields: ['image', 'altText'] },
+            },
+        }),
         cart: relationship({
             ref: 'CartItem.user',
             many: true,
@@ -43,6 +52,6 @@ export const User = list({
         events: relationship({
             ref: 'Event.user',
             many: true
-        })
+        }),
     },
 });

@@ -1,7 +1,16 @@
-import { EditUserProfilePhotoStyles } from './styles'
+import useForm from '../../lib/useForm'
+import { WhiteButton } from '../WhiteButton'
 
-export default function EditUserProfilePhoto() {
+export default function EditUserProfilePhoto({mt}) {
+    const { handleChange } = useForm()
     return (
-        <EditUserProfilePhotoStyles>Edit Profile Photo</EditUserProfilePhotoStyles>
+        <form>
+            <input
+                type="file"
+                id="image"
+                name="image"
+                onChange={handleChange}
+            />
+        </form>
     )
 }

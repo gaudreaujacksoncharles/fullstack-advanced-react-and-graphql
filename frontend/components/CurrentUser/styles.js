@@ -11,6 +11,10 @@ export const CurrentUserImage = styled.div`
     width:3.2rem;
     height:3.2rem;
     background-color:${darken(.1, '#FFFFFF')};
+    ${props => props.photo && `
+        background-image:url(${props.photo});
+        background-size:cover;
+    `}
     border-radius:.3rem;
     margin-right:1.2rem;
 `

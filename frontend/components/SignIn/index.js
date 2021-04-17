@@ -3,8 +3,9 @@ import { useMutation } from '@apollo/client'
 import useForm from '../../lib/useForm'
 import { CURRENT_USER_QUERY } from '../User'
 import Error from '../ErrorMessage'
-import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationPanel, AuthenticationSubmitButton, AuthenticationLabel, AuthenticationInput, AuthenticationLabelText, AuthenticationLabelHeader } from '../Authentication/'
+import { AuthenticationStyles, AuthenticationCenter, AuthenticationTitle, AuthenticationForm, AuthenticationPanel, AuthenticationLabel, AuthenticationInput, AuthenticationLabelText, AuthenticationLabelHeader } from '../Authentication/'
 import PublicTopNavigation from '../PublicTopNavigation'
+import { WhiteButton } from '../WhiteButton'
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -79,7 +80,7 @@ export default function SignIn() {
                 />
               </AuthenticationLabel>
             </AuthenticationPanel>
-            <AuthenticationSubmitButton type="submit">Sign In</AuthenticationSubmitButton>
+            <WhiteButton type="submit" mt='1.6rem'>Sign In</WhiteButton>
           </AuthenticationForm>
         </AuthenticationCenter>
       </AuthenticationStyles>

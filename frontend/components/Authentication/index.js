@@ -51,34 +51,6 @@ export const AuthenticationPanel = styled.fieldset`
     /* box-shadow */
     box-shadow:var(--panelBoxShadow);
 `
-export const AuthenticationSubmitButton = styled.button`
-    display:flex;
-    align-self:flex-start;
-    align-items:center;
-    height:var(--whiteButtonHeight);
-    background-color:white;
-    /* color/font/text */
-    color:var(--whiteButtonColor);
-    font-size:1.4rem;
-    font-weight:var(--whiteButtonFontWeight);
-    line-height:1.4rem;
-    font-weight:500;
-    /* padding */
-    padding:var(--whiteButtonPadding);
-    /* border */
-    border-width:1px;
-    border-style:solid;
-    border-top-color:var(--whiteButtonBorderTopColor);
-    border-left-color:var(--whiteButtonBorderLeftColor);
-    border-right-color:var(--whiteButtonBorderRightColor);
-    border-bottom-color:var(--whiteButtonBorderBottomColor);
-    border-radius:3px;
-    /* box-shadow */
-    box-shadow: 0 1px 0 0 rgba(0,0,0,.2);
-    /* appearance */
-    appearance:none;
-    margin-top:1.6rem;
-`
 export const AuthenticationLabel = styled.label`
     display:flex;
     flex-direction:column;

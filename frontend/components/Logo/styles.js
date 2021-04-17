@@ -10,6 +10,7 @@ export const LogoStyles = styled.h1`
   border-radius:2px;
   z-index: 2;
   ${props => props.mr && `margin-right:${props.mr}`};
+  outline:none;
   a {
     display:flex;
     color: white;

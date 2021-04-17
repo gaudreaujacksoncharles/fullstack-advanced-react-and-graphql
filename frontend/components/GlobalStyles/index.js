@@ -26,7 +26,9 @@ export const GlobalStyles = createGlobalStyle`
     /* White Button */
     --whiteButtonHeight:2.6rem;
     --whiteButtonColor:${darken(.7, '#FFFFFF')};
+    --whiteButtonFontSize:1.4rem;
     --whiteButtonFontWeight:700;
+    --whiteButtonLineHeight:1.4rem;
     --whiteButtonBorderTopColor:${darken(.15, '#FFFFFF')};
     --whiteButtonBorderLeftColor:${darken(.2, '#FFFFFF')};
     --whiteButtonBorderRightColor:${darken(.2, '#FFFFFF')};
