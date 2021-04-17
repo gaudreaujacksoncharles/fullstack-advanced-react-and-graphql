@@ -33,6 +33,7 @@ export default function CreateEvent() {
                 onSubmit={async (e) => {
                     e.preventDefault()
                     const res = await createProduct()
+                    closeCreateEvent()
                 }}>
                 <CreateEventGeneral>
                     <CreateEventHeader>
