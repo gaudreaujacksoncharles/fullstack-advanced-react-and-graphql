@@ -14,6 +14,7 @@ export const CurrentUserImage = styled.div`
     ${props => props.photo && `
         background-image:url(${props.photo});
         background-size:cover;
+        background-position:center;
     `}
     border-radius:.3rem;
     margin-right:1.2rem;
