@@ -47,17 +47,17 @@ export default withAuth(
       },
     },
     db: process.env.DATABASE_URL
-      ? { provider: 'postgresql', url: process.env.DATABASE_URL }
+      ? { provider: 'mongoose', url: process.env.DATABASE_URL }
       : {
-          provider: 'sqlite',
-          url: databaseURL,
-          async onConnect(keystone) {
-            console.log('Connected to the database!');
-            if (process.argv.includes('--seed-data')) {
-              await insertSeedData(keystone);
-            }
-          },
+        provider: 'mongoose',
+        url: databaseURL,
+        async onConnect(keystone) {
+          console.log('Connected to the database!');
+          if (process.argv.includes('--seed-data')) {
+            await insertSeedData(keystone);
+          }
         },
+      },
     lists: createSchema({
       // Schema items go in here
       User,
