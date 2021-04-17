@@ -11,6 +11,7 @@ import { CartItem } from './schemas/CartItem';
 import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
+import { Event } from './schemas/Event';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
@@ -70,6 +71,7 @@ export default withAuth(
             OrderItem,
             Order,
             Role,
+            Event,
         }),
         extendGraphqlSchema,
         ui: {

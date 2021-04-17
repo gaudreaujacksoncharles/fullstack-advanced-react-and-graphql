@@ -40,5 +40,9 @@ export const User = list({
             ref: 'Product.user',
             many: true,
         }),
+        events: relationship({
+            ref: 'Event.user',
+            many: true
+        })
     },
 });
