@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const EditUserProfilePhotoStyles = styled.button`
+export const EditUserAccountStyles = styled.button`
     display:flex;
 `
