@@ -55,14 +55,14 @@ export default function UpdateUser({id, name, email, image}) {
         },
         refetchQueries: [{ query: CURRENT_USER_QUERY }]
     });
-    //console.dir('updateUser',updateUser, {depth:1})
+    console.dir('updateData',updateData, {depth:1})
     return (
         <Form onSubmit={async (e) => {
             e.preventDefault()
             const res = await updateUser()
             clearForm()
           }}>
-            <fieldset>
+            <fieldset disabled={updateLoading} aria-busy={updateLoading}>
               <label htmlFor="name">
                 Image
                 <input
