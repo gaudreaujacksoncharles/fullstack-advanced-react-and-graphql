@@ -74,13 +74,13 @@ export const AuthenticationLabelText = styled.label`
 export const AuthenticationInput = styled.input`
     display:flex;
     width:100%;
-    height:40px;
+    height:48px;
     /* color/font/text */
     color:var(--inputColor);
     font-size:1.4rem;
     font-weight:500;
     /* padding */
-    padding:.4rem .8rem;
+    padding:.4rem 1.6rem;
     /* border */
     border-width:1px;
     border-style:solid;
