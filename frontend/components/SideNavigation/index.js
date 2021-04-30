@@ -50,6 +50,11 @@ export default function SideNavigation() {
             </Feature>
             <Feature>
               <FeatureHeader>
+                  <Link href="/users">Users</Link>
+              </FeatureHeader>
+            </Feature>
+            <Feature>
+              <FeatureHeader>
                   <FeatureButton type='button' onClick={toggleCart}>
                     Cart
                   </FeatureButton>
